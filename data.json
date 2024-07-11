@@ -1,0 +1,83 @@
+[
+  {
+    "image": [
+      "https://keygem.com/cdn/shop/files/SylphPotion-4copy.png?v=1682676087&width=600",
+      "https://keygem.com/cdn/shop/files/SylphPotion-4copy.png?v=1682676087&width=128",
+      "https://keygem.com/cdn/shop/files/SylphPotion-2copy.png?v=1682676087&width=128",
+      "https://keygem.com/cdn/shop/files/SylphPotion-19copy.png?v=1682676087&width=128",
+      "https://keygem.com/cdn/shop/files/SylphPotion-7copy.png?v=1682676087&width=128"
+    ],
+    "title": "Mechanical Gaming Keyboard",
+    "brand": "Brand A",
+    "availableQuantity": "50",
+    "price": "1299.99",
+    "rating": "4.5",
+    "keyboardType": "Cases",
+    "description": "A high-quality mechanical gaming keyboard with customizable RGB lighting and durable switches."
+  },
+  {
+    "image": [
+      "https://keygem.com/cdn/shop/files/luminkey80-banner-2.jpg?v=1696235332&width=800",
+      "https://keygem.com/cdn/shop/files/luminkey80-ano-black-2.jpg?v=1696235332&width=800",
+      "https://keygem.com/cdn/shop/files/luminkey80-ano-silver-2.jpg?v=1696235332&width=800",
+      "https://keygem.com/cdn/shop/files/basekeycaps-wob.jpg?v=1696235332&width=800"
+    ],
+    "title": "Wireless Ergonomic Keyboard",
+    "brand": "Brand B",
+    "availableQuantity": "30",
+    "price": "3799.99",
+    "offerPrice": "3000",
+    "keyboardType": "Cases",
+    "rating": "4.0",
+    "offer": true,
+    "description": "An ergonomic wireless keyboard designed for comfort and efficiency with a built-in rechargeable battery."
+  },
+  {
+    "image": [
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710737/b5kl0sir77jhixhmxbgm.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710736/v9rzqdmiumjvjdmumgdt.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710730/npjcz7x2u1xdsrk5xu3f.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710729/nz3e7fqon1hvdccekanj.jpg"
+    ],
+    "title": "Compact Mechanical Keyboard",
+    "brand": "Brand C",
+    "availableQuantity": "100",
+    "price": "1599.99",
+    "keyboardType": "Cases",
+    "offer": false,
+    "rating": "4.7",
+    "description": "A compact mechanical keyboard with a minimalist design and high-performance keyswitches."
+  },
+  {
+    "image": [
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710731/fnfn1mrsxevrpj3k9fkc.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710731/aqiym4imteomdugmmt0h.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710731/mc6psveyxau544jlngys.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710731/booowzsofvolybjcibxh.jpg"
+    ],
+    "title": "RGB Gaming Keyboard",
+    "brand": "Brand D",
+    "availableQuantity": "75",
+    "price": "2099.99",
+    "keyboardType": "Cases",
+    "offer": false,
+    "rating": "4.6",
+    "description": "A gaming keyboard featuring vibrant RGB lighting, programmable keys, and a durable build."
+  },
+  {
+    "image": [
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710729/bxz1s9igqizsalzqaxo4.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710729/xekuedfqfgmwetix71k3.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720710729/f2anlnfyfcr19d23gzvi.jpg",
+      "https://res.cloudinary.com/dvtdneocc/image/upload/v1720698892/fqhn0gslymj2qt00ctkr.png"
+    ],
+    "title": "Bluetooth Mechanical Keyboard",
+    "brand": "Brand E",
+    "availableQuantity": "25",
+    "price": "4999.99",
+    "keyboardType": "Plates",
+    "offer": false,
+    "rating": "4.3",
+    "description": "A mechanical keyboard with Bluetooth connectivity, providing a seamless and wireless typing experience."
+  }
+]

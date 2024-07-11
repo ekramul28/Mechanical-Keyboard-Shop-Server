@@ -12,8 +12,11 @@ export const productValidatorSchema = z.object({
       .min(0, { message: "availableQuantity cannot be less than 0" })
       .nonnegative({ message: "availableQuantity is required" }),
     price: z.number().nonnegative({ message: "price is required" }),
+    offerPrice: z.number(),
+    offer: z.boolean(),
     rating: z.number().nonnegative({ message: "rating is required" }),
     description: z.string({ message: "description is required" }),
+    keyboardType: z.string({ message: "keyboardType is required" }),
     isDeleted: z.boolean().optional(),
   }),
 });

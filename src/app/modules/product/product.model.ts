@@ -4,7 +4,7 @@ import { TProduct } from "./product.interface";
 const productSchema = new Schema<TProduct>(
   {
     image: {
-      type: String,
+      type: [String],
       required: [true, "image Name is required"],
     },
     title: {
@@ -32,6 +32,18 @@ const productSchema = new Schema<TProduct>(
     description: {
       type: String,
       required: [true, "description is required"],
+    },
+
+    keyboardType: {
+      type: String,
+      required: [true, "keyboardType is required"],
+    },
+    offerPrice: {
+      type: Number,
+    },
+    offer: {
+      type: Boolean,
+      default: false,
     },
     isDeleted: {
       type: Boolean,

@@ -38,7 +38,7 @@ const productSchema = new Schema<TProduct>(
       type: String,
       required: [true, "keyboardType is required"],
     },
-    offerPrice: {
+    discount: {
       type: Number,
     },
     offer: {

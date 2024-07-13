@@ -7,7 +7,7 @@ export type TProduct = {
   rating: number;
   description: string;
   keyboardType: string;
-  offerPrice?: number;
+  discount?: number;
   offer?: boolean;
   isDeleted?: boolean;
 };

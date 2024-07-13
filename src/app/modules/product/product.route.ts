@@ -5,15 +5,7 @@ import { ProductControllers } from "./product.controller";
 
 const router = express.Router();
 
-router.get(
-  "/",
-  validateRequest(productValidatorSchema),
-  ProductControllers.getAllProduct
-);
-router.get(
-  "/:id",
-  validateRequest(productValidatorSchema),
-  ProductControllers.getSingleProduct
-);
+router.get("/", ProductControllers.getAllProduct);
+router.get("/:id", ProductControllers.getSingleProduct);
 
 export const ProductRoutes = router;

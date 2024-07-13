@@ -71,11 +71,19 @@ const getTotalPrice = catchAsync(async (req, res) => {
     (accumulator, currentValue) => accumulator + currentValue,
     1
   );
-  const discountPrice = discountPriceArr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    1
-  );
-  const total = totalPrice - discountPrice;
+  let discountPrice = 0;
+  if (totalPrice > 100) {
+    discountPrice = discountPriceArr.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      1
+    );
+  }
+
+  const totalCart = result.length;
+  let total = totalPrice - discountPrice;
+  if (totalCart > 0 && total > 100) {
+    total = totalPrice - discountPrice - 50;
+  }
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -84,6 +92,7 @@ const getTotalPrice = catchAsync(async (req, res) => {
       totalPrice,
       discountPrice,
       total,
+      totalCart,
     },
   });
 });

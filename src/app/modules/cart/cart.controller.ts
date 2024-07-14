@@ -59,7 +59,7 @@ const getTotalPrice = catchAsync(async (req, res) => {
   let discountPriceArr: number[] = [];
   result.forEach((cart) => {
     const productQuantity = cart.productQuantity;
-    const product = cart.product;
+    const product = cart.product as any;
     const discount: number = product?.discount ? product?.discount : 0;
     const price: number = product?.price * productQuantity;
 

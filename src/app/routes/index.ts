@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { CartRoute } from "../modules/cart/cart.routes";
 import { ProductRoutes } from "../modules/product/product.route";
+import { PaymentRoutes } from "../modules/payment/payment.route";
 
 const router = Router();
 
@@ -12,6 +13,10 @@ const moduleRoutes = [
   {
     path: "/cart",
     route: CartRoute,
+  },
+  {
+    path: "/Create-checkout-session",
+    route: PaymentRoutes,
   },
 ];
 

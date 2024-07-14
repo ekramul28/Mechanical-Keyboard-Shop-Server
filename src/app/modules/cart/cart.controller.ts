@@ -4,7 +4,6 @@ import sendResponse from "../../utils/sendResponse";
 import { CartServices } from "./cart.service";
 
 const addProduct = catchAsync(async (req, res) => {
-  console.log(req.body);
   const result = await CartServices.addProductFromDB(req.body);
 
   sendResponse(res, {
@@ -18,7 +17,6 @@ const addProduct = catchAsync(async (req, res) => {
 const getProduct = catchAsync(async (req, res) => {
   const { email } = req.params;
   const result = await CartServices.getProductFromDB(email);
-  // console.log(result);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -40,8 +38,6 @@ const deleteProduct = catchAsync(async (req, res) => {
 const updateProduct = catchAsync(async (req, res) => {
   const { id } = req.params;
   const data = req.body;
-  console.log(data);
-  console.log(id);
   const result = await CartServices.updateProductFromDB(data, id);
 
   sendResponse(res, {
@@ -54,7 +50,6 @@ const updateProduct = catchAsync(async (req, res) => {
 const getTotalPrice = catchAsync(async (req, res) => {
   const { email } = req.params;
   const result = await CartServices.getProductFromDB(email);
-  console.log(result);
   let totalPriceArr: number[] = [];
   let discountPriceArr: number[] = [];
   result.forEach((cart) => {
@@ -66,7 +61,6 @@ const getTotalPrice = catchAsync(async (req, res) => {
     totalPriceArr.push(price);
     discountPriceArr.push(discount);
   });
-  console.log(totalPriceArr);
   const totalPrice = totalPriceArr.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
     1

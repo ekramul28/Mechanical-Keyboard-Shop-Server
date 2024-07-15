@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", CardController.addProduct);
 router.get("/:email", CardController.getProduct);
 router.get("/price/:email", CardController.getTotalPrice);
-router.delete("/:id", CardController.deleteProduct);
+router.delete("/", CardController.deleteProduct);
 router.patch("/:id", CardController.updateProduct);
 
 export const CartRoute = router;

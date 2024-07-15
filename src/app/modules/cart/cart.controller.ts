@@ -25,8 +25,7 @@ const getProduct = catchAsync(async (req, res) => {
   });
 });
 const deleteProduct = catchAsync(async (req, res) => {
-  const { id } = req.params;
-  const result = await CartServices.deleteProductFromDB(id);
+  const result = await CartServices.deleteProductFromDB(req.body);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,

@@ -2,6 +2,7 @@ import httpStatus from "http-status";
 import AppError from "../../errors/AppError";
 import { TCart } from "./cart.interface";
 import { Cart } from "./cart.model";
+import mongoose from "mongoose";
 
 const addProductFromDB = async (payload: TCart) => {
   const isCardProductExist = await Cart.find({ product: payload.product });
@@ -17,8 +18,11 @@ const getProductFromDB = async (email: string) => {
   return result;
 };
 
-const deleteProductFromDB = async (id: string) => {
-  const result = await Cart.findByIdAndDelete(id);
+const deleteProductFromDB = async (idsToDelete: string[]) => {
+  const filterId = {
+    _id: { $in: idsToDelete.map((id) => new mongoose.Types.ObjectId(id)) },
+  };
+  const result = await Cart.deleteMany(filterId);
   return result;
 };
 

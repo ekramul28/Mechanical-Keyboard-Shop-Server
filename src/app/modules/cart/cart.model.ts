@@ -7,6 +7,7 @@ const cartSchema = new Schema<TCart>({
     unique: true,
     ref: "Product",
   },
+
   productQuantity: {
     type: Number,
   },

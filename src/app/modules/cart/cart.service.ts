@@ -5,7 +5,9 @@ import { Cart } from "./cart.model";
 import mongoose from "mongoose";
 
 const addProductFromDB = async (payload: TCart) => {
-  const isCardProductExist = await Cart.find({ product: payload.product });
+  const isCardProductExist = await Cart.find({
+    product: payload.product,
+  });
 
   if (isCardProductExist && isCardProductExist.length > 0) {
     throw new AppError(httpStatus.BAD_REQUEST, " already added!");

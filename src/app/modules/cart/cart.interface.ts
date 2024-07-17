@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
 
 export type TCart = {
-  product: Types.ObjectId;
+  product: string;
   productQuantity: number;
   email: string;
 };

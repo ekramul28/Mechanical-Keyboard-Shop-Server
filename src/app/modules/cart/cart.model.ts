@@ -4,9 +4,7 @@ import { TCart } from "./cart.interface";
 const cartSchema = new Schema<TCart>(
   {
     product: {
-      type: Schema.Types.ObjectId,
-      unique: true,
-      ref: "Product",
+      type: String,
     },
 
     productQuantity: {

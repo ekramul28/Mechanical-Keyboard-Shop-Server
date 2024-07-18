@@ -6,28 +6,26 @@ import mongoose from "mongoose";
 import { Product } from "../product/product.model";
 
 const addProductFromDB = async (payload: TCart) => {
-  console.log(payload);
   const productData = await Product.findById(payload.product);
   if (!productData) {
     throw new AppError(httpStatus.NOT_FOUND, "Product not found");
   }
 
   const carts = await Cart.find({ email: payload.email });
-  carts?.forEach((cart) => {
-    if (cart.product.toString().includes(payload?.product)) {
-    }
-  });
+  const isExistInCard = carts.filter(
+    (card) => card.product === payload.product
+  );
+  if (isExistInCard.length > 0) {
+    throw new AppError(httpStatus.BAD_REQUEST, "Product already added ");
+  }
 
   const result = await Cart.create(payload);
-  console.log(result);
   return result;
 };
 const getProductFromDB = async (email: string) => {
   const cartItems = await Cart.find({ email });
   const productIds = cartItems.map((item) => item.product);
   const products = await Product.find({ _id: { $in: productIds } }).exec();
-  console.log({ products });
-  // console.log({ result });
   const cartItemsWithProducts = cartItems.map((cartItem) => {
     const product = products.find(
       (product) => product._id.toString() === cartItem.product.toString()
@@ -41,7 +39,6 @@ const getProductFromDB = async (email: string) => {
       updatedAt: cartItem?.updatedAt,
     };
   });
-  console.log(cartItemsWithProducts);
   return cartItemsWithProducts;
 };
 

@@ -4,11 +4,19 @@ import cors from "cors";
 import globalErrorHandler from "./app/middlewares/globalErrorhandler";
 import router from "./app/routes";
 const app: Application = express();
+import cookieParser from "cookie-parser";
 
 //parsers
 
 app.use(express.json());
-app.use(cors({ origin: ["http://localhost:5173"], credentials: true }));
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 
 app.use("/api/v1", router);
 

@@ -6,6 +6,9 @@ import mongoose from "mongoose";
 import { Product } from "../product/product.model";
 
 const addProductFromDB = async (payload: TCart) => {
+  if (!payload.email) {
+    throw new AppError(httpStatus.NOT_FOUND, "login  first");
+  }
   const productData = await Product.findById(payload.product);
   if (!productData) {
     throw new AppError(httpStatus.NOT_FOUND, "Product not found");

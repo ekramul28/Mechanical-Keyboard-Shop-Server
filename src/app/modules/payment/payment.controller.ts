@@ -6,7 +6,6 @@ import { createPaymentLinkService } from "./payment.service";
 
 const stripePayment = catchAsync(async (req, res) => {
   const { email, total } = req.body;
-  console.log(req.body);
   const result = await createPaymentLinkService.createPaymentLink(email, total);
   sendResponse(res, {
     statusCode: httpStatus.OK,

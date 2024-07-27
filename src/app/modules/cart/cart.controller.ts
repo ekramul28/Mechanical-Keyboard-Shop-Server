@@ -5,7 +5,6 @@ import { CartServices } from "./cart.service";
 
 const addProduct = catchAsync(async (req, res) => {
   const result = await CartServices.addProductFromDB(req.body);
-  // console.log(result);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

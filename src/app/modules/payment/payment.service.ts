@@ -8,11 +8,9 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 });
 
 const createPaymentLink = async (email: string, total: number) => {
-  console.log(email);
   const cartItems = await Cart.find({ email });
   const productIds = cartItems.map((item) => item.product);
   const products = await Product.find({ _id: { $in: productIds } }).exec();
-  console.log({ products });
 
   const lineItems = cartItems.map((cartItem) => {
     const productD = products.find(
@@ -61,7 +59,6 @@ const createPaymentLink = async (email: string, total: number) => {
     success_url: "https://mechanical-keyboard-shop-ten.vercel.app/success",
     cancel_url: "https://mechanical-keyboard-shop-ten.vercel.app/error",
   });
-  console.log(session.id);
   return session;
 };
 
